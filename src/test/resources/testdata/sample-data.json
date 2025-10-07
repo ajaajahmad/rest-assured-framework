@@ -1,0 +1,20 @@
+{
+  "users.json": [
+    {
+      "username": "testuser1",
+      "email": "testuser1@example.com",
+      "country": "US"
+    },
+    {
+      "username": "testuser2",
+      "email": "testuser2@example.com",
+      "country": "GB"
+    },
+    {
+      "username": "testuser3",
+      "email": "testuser3@example.com",
+      "country": "IN"
+    }
+  ],
+  "users.csv": "id,username,email,country\n1,testuser1,testuser1@example.com,US\n2,testuser2,testuser2@example.com,GB\n3,testuser3,testuser3@example.com,IN"
+}
