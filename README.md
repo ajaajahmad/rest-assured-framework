@@ -49,7 +49,7 @@ A scalable and maintainable **REST Assured** API testing framework using Java an
 rest-assured-framework/
 ├── src/
 │   ├── main/
-│   │   └── java/com/example/
+│   │   └── java/com/automation/
 │   │       ├── api/
 │   │       │   ├── ApiClient.java              # Base API client
 │   │       │   ├── RequestSpecBuilder.java     # Request spec builder
@@ -66,7 +66,7 @@ rest-assured-framework/
 │   │           ├── DateUtil.java               # Date utilities
 │   │           └── DataProviderUtil.java       # TestNG data providers
 │   └── test/
-│       ├── java/com/example/
+│       ├── java/com/automation/
 │       │   ├── base/
 │       │   │   └── BaseTest.java               # Base test class
 │       │   ├── listeners/
