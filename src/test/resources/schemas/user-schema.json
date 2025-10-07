@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Spotify User Profile",
+  "type": "object",
+  "required": ["id", "type", "uri", "href"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The Spotify user ID"
+    },
+    "display_name": {
+      "type": ["string", "null"],
+      "description": "The name displayed on the user's profile"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "The user's email address"
+    },
+    "country": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "The country of the user (ISO 3166-1 alpha-2)"
+    },
+    "product": {
+      "type": "string",
+      "enum": ["premium", "free", "open"],
+      "description": "The user's Spotify subscription level"
+    },
+    "type": {
+      "type": "string",
+      "const": "user",
+      "description": "The object type: 'user'"
+    },
+    "uri": {
+      "type": "string",
+      "pattern": "^spotify:user:",
+      "description": "The Spotify URI for the user"
+    },
+    "href": {
+      "type": "string",
+      "format": "uri",
+      "description": "A link to the Web API endpoint for this user"
+    },
+    "external_urls": {
+      "type": "object",
+      "properties": {
+        "spotify": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": ["spotify"]
+    },
+    "followers": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": ["string", "null"]
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": ["total"]
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "height": {
+            "type": ["integer", "null"],
+            "minimum": 0
+          },
+          "width": {
+            "type": ["integer", "null"],
+            "minimum": 0
+          }
+        },
+        "required": ["url"]
+      }
+    },
+    "explicit_content": {
+      "type": "object",
+      "properties": {
+        "filter_enabled": {
+          "type": "boolean"
+        },
+        "filter_locked": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
