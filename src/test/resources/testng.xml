@@ -20,12 +20,10 @@
 		</classes>
 	</test>
 
-	<!-- Uncomment when ready to add more tests
-    <test name="Product API Tests">
-        <classes>
-            <class name="com.automation.tests.ProductApiTest"/>
-        </classes>
-    </test>
-    -->
+	<test name="Product API Tests">
+		<classes>
+			<class name="com.automation.tests.ProductApiTest" />
+		</classes>
+	</test>
 
 </suite>
