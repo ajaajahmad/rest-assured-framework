@@ -12,9 +12,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class JsonUtils {
+public class JsonUtil {
 
-	private static final Logger log = LoggerFactory.getLogger(JsonUtils.class);
+	private static final Logger log = LoggerFactory.getLogger(JsonUtil.class);
 	private static final ObjectMapper objectMapper = new ObjectMapper();
 
 	static {
