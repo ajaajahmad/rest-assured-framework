@@ -9,7 +9,9 @@ public class ValidateEmployee {
 
 	@Test
 	public void verifyUser() {
-		given().when()
+		given()
+				.header("x-api-key", "reqres-free-v1")
+				.when()
 				.get("https://reqres.in/api/users/2")
 				.then()
 				.statusCode(200)
