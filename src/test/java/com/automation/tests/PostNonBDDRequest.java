@@ -43,7 +43,6 @@ public class PostNonBDDRequest {
 
 		// Check status line.
 		validatableResp.statusLine("HTTP/1.1 200 OK");
-
 		validatableResp.body("data.name", equalTo("newapitest"));
 		validatableResp.body("message", equalTo("Successfully! Record has been added."));
 
