@@ -1,5 +1,7 @@
 package com.automation.tests;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,6 +46,23 @@ public class PutNonBDDRequest {
 
 		// let's print response body
 		String responseString = response.prettyPrint();
+
+		// perform validation
+		validate = response.then();
+
+		// get status code
+		validate.statusCode(200);
+
+		// check status line
+		validate.statusLine("HTTP/1.1 200 OK");
+
+		// check response
+		validate.body("data.employee_salary", equalTo("90908"));
+
+		// check response message
+		validate.body("message", equalTo("Successfully! Record has been updated."));
+		
+		System.out.println(responseString);
 
 	}
 
