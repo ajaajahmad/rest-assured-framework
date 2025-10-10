@@ -13,6 +13,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class PostBDDRequest {
 
+
     ValidatableResponse validate;
 
     @Test
