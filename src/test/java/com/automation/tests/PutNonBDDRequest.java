@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -25,6 +27,23 @@ public class PutNonBDDRequest {
 		jsonString.put("employee_salary", "90908");
 		jsonString.put("employee_age", "46");
 		jsonString.put("profile_image", "");
+
+		RestAssured.baseURI = "https://dummy.restapiexample.com/api/v1/update/2";
+
+		// create request specification.
+		request = RestAssured.given();
+
+		// setting content type
+		request.contentType(ContentType.JSON);
+
+		// adding body as string
+		request.body(jsonString);
+
+		// calling put method
+		response = request.put();
+
+		// let's print response body
+		String responseString = response.prettyPrint();
 
 	}
 
