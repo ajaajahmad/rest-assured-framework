@@ -31,7 +31,8 @@ public class PutBDDRequest {
 		
 		// GET employee details
 		validate = given()
-					.baseUri("https://dummy.restapiexample.com/api/v1/employee/2")
+					.baseUri("https://dummy.restapiexample.com/api")
+					.basePath("/v1/employee/2")
 					.contentType(ContentType.JSON)
 					.when()
 					.get()
