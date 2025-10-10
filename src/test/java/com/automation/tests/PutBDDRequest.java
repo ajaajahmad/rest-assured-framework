@@ -29,8 +29,7 @@ public class PutBDDRequest {
 		jsonString.put("employee_age", "63");
 		jsonString.put("profile_image", "");
 		
-		
-		// get details of employee
+		// GET employee details
 		validate = given()
 					.baseUri("https://dummy.restapiexample.com/api/v1/employee/2")
 					.contentType(ContentType.JSON)
@@ -39,21 +38,22 @@ public class PutBDDRequest {
 					.then()
 					.assertThat().statusCode(200);
 		
-		System.out.println(validate.extract().asPrettyString());
+		System.out.println("GET Response:\n" + validate.extract().asPrettyString());
 		
-		// update employee salary
+		// PUT update employee
 		validator = given()
-					.basePath("https://dummy.restapiexample.com/api")
+					.baseUri("https://dummy.restapiexample.com/api")
 					.basePath("/v1/update/2")
 					.contentType(ContentType.JSON)
+					.body(jsonString)
 					.when()
 					.put()
 					.then()
 					.assertThat().statusCode(200)
-					.body("data.employee_name", equalTo(""))
+					.body("data.employee_name", equalTo("Garrett Winters"))
 					.body("message", equalTo("Successfully! Record has been updated."));
 		
-		System.out.println(validator.extract().asPrettyString());
+		System.out.println("PUT Response:\n" + validator.extract().asPrettyString());
 	}
 
 }
