@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.junit.Test;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
@@ -22,22 +23,37 @@ public class PutBDDRequest {
 
 		Map<String, String> jsonString = new HashMap<>();
 
-		jsonString.put("id", "501");
-		jsonString.put("employee_name", "ajaaj");
-		jsonString.put("emplayee_salary", "2983");
-		jsonString.put("employee_age", "26");
+		jsonString.put("id", "2");
+		jsonString.put("employee_name", "Garrett Winters");
+		jsonString.put("employee_salary", "170561");
+		jsonString.put("employee_age", "63");
 		jsonString.put("profile_image", "");
 		
+		
+		// get details of employee
 		validate = given()
-					.baseUri("https://dummy.restapiexample.com/api/v1/update/2")
+					.baseUri("https://dummy.restapiexample.com/api/v1/employee/2")
 					.contentType(ContentType.JSON)
 					.when()
 					.get()
 					.then()
 					.assertThat().statusCode(200);
 		
-		System.out.println(response.extract().asPrettyString());
-
+		System.out.println(validate.extract().asPrettyString());
+		
+		// update employee salary
+		validator = given()
+					.basePath("https://dummy.restapiexample.com/api")
+					.basePath("/v1/update/2")
+					.contentType(ContentType.JSON)
+					.when()
+					.put()
+					.then()
+					.assertThat().statusCode(200)
+					.body("data.employee_name", equalTo(""))
+					.body("message", equalTo("Successfully! Record has been updated."));
+		
+		System.out.println(validator.extract().asPrettyString());
 	}
 
 }
