@@ -18,7 +18,8 @@ public class DeleteNonBDDRequest {
 	@Test
 	public void deleteUser() {
 		RestAssured.baseURI = "https://dummy.restapiexample.com/api";
-		RestAssured.basePath = "/v1/delete/3";
+		request = RestAssured.given();
+		response = request.delete("/v1/delete/3");
 		String stringResponse = response.prettyPrint();
 		validate = response.then();
 		validate.statusCode(200);
