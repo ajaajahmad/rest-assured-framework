@@ -9,14 +9,10 @@ import java.util.Map;
 import org.junit.Test;
 
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
 
 public class PatchBDDRequest {
 
-	RequestSpecification requestSpecification;
-	Response response;
 	ValidatableResponse validateResponse;
 
 	@Test
@@ -34,6 +30,8 @@ public class PatchBDDRequest {
 				.then()
 				.assertThat().statusCode(200)
 				.body("name", equalTo("William"));
+		
+		System.out.println("Response: " + validateResponse.extract().asPrettyString());
 	}
 
 }
