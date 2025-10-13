@@ -6,6 +6,7 @@ import java.util.Map;
 import org.junit.Test;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -23,6 +24,19 @@ public class PatchNonBDDRequest {
 		map.put("name", "William");
 		
 		RestAssured.baseURI = "https://reqres.in/api/users/2";
+		
+		requestSpec = RestAssured.given();
+		requestSpec.contentType(ContentType.JSON);
+		requestSpec.body(map);
+		response = requestSpec.patch();
+		
+		String responseString = response.prettyPrint();
+		
+		validateResponse = response.then();
+		validateResponse.statusCode(200);
+		validateResponse.statusLine("HTTP/ 1.1 200 OK");
+		
+		
 	}
 
 }
