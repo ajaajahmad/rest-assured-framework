@@ -23,7 +23,6 @@ public class PostRequestJsonObject {
 		RestAssured.given()
 			.contentType(ContentType.JSON)
 			.body(data.toString())
-			.log().all()
 			.when()
 			.post("https://dummy.restapiexample.com/api/v1/create")
 			.then()
