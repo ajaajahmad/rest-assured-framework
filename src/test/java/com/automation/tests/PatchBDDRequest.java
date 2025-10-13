@@ -31,7 +31,7 @@ public class PatchBDDRequest {
 				.assertThat().statusCode(200)
 				.body("name", equalTo("William"));
 		
-		System.out.println("Response: " + validateResponse.extract().asPrettyString());
+		System.out.println("Response:\n" + validateResponse.extract().asPrettyString());
 	}
 
 }
