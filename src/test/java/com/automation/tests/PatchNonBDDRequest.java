@@ -24,21 +24,21 @@ public class PatchNonBDDRequest {
 
 		Map<String, String> map = new HashMap<>();
 		map.put("name", "William");
-		
+
 		RestAssured.baseURI = "https://reqres.in/api/users/2";
-		
+
 		requestSpec = RestAssured.given();
 		requestSpec.contentType(ContentType.JSON);
 		requestSpec.body(map);
 		response = requestSpec.patch();
-		
+
 		String responseString = response.prettyPrint();
-		
+
 		validateResponse = response.then();
 		validateResponse.statusCode(200);
 		validateResponse.statusLine("HTTP/ 1.1 200 OK");
-		
-		validateResponse.body("name", equalTo(""));
+
+		validateResponse.body("name", equalTo("William"));
 	}
 
 }
