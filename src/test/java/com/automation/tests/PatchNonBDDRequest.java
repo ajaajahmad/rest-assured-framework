@@ -1,5 +1,7 @@
 package com.automation.tests;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +38,7 @@ public class PatchNonBDDRequest {
 		validateResponse.statusCode(200);
 		validateResponse.statusLine("HTTP/ 1.1 200 OK");
 		
-		
+		validateResponse.body("name", equalTo(""));
 	}
 
 }
