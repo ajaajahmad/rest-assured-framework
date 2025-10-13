@@ -37,9 +37,11 @@ public class PatchNonBDDRequest {
 
 		validateResponse = response.then();
 		validateResponse.statusCode(200);
-		validateResponse.statusLine("HTTP/ 1.1 200 OK");
+		validateResponse.statusLine("HTTP/1.1 200 OK");
 
 		validateResponse.body("name", equalTo("William"));
+
+		System.out.println("Response: " + responseString);
 	}
 
 }
