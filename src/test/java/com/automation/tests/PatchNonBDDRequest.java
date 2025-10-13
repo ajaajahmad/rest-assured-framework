@@ -29,6 +29,7 @@ public class PatchNonBDDRequest {
 
 		requestSpec = RestAssured.given();
 		requestSpec.contentType(ContentType.JSON);
+		requestSpec.header("x-api-key", "reqres-free-v1");
 		requestSpec.body(map);
 		response = requestSpec.patch();
 
