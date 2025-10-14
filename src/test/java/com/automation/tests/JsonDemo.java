@@ -1,8 +1,13 @@
 package com.automation.tests;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 
 public class JsonDemo {
 
@@ -27,7 +32,8 @@ public class JsonDemo {
 		array.add(firstEmployee);
 		array.add(secondEmployee);
 
-		// Print JSON array (optional)
-		System.out.println(array.toJSONString());
+		RestAssured.given().contentType(ContentType.JSON).body(array.toJSONString()).when()
+				.post("https://dummy.restapiexample.com/api/v1/create").then().assertThat().statusCode(200)
+				.body("message", equalTo("Successfully! Record has been added.")).and().log().all();
 	}
 }
