@@ -13,6 +13,14 @@ public class JsonDemo {
 		firstEmployee.put("employee_age", "26");
 		firstEmployee.put("employee_salary", "11111");
 		
+		//JSON Object for second employee
+		JSONObject secondEmployee = new JSONObject();
+		
+		secondEmployee.put("employee_name", "ahmad");
+		secondEmployee.put("profile_image", "test.png");
+		secondEmployee.put("employee_age", "36");
+		secondEmployee.put("employee_salery", "99999");
+		
 		
 	}
 
