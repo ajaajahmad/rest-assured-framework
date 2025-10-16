@@ -20,7 +20,7 @@ public class JsonArrayDemo {
 		data2.put("firstname", "Shahrukh");
 		data2.put("lastname", "Khan");
 		data2.put("age", "54");
-		data2.put("salary", "742337");
+		data2.put("salary", "74233798");
 
 		JSONArray array1 = new JSONArray();
 		array1.add(data1);
