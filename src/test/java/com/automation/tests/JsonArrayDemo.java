@@ -2,11 +2,11 @@ package com.automation.tests;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
-import jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput;
+import org.junit.Test;
 
 public class JsonArrayDemo {
 
+	@Test
 	public void passBodyAsJsonArray() {
 		JSONObject data1 = new JSONObject();
 
