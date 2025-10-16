@@ -3,6 +3,8 @@ package com.automation.tests;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput;
+
 public class JsonArrayDemo {
 
 	public void passBodyAsJsonArray() {
@@ -29,6 +31,8 @@ public class JsonArrayDemo {
 		JSONObject data3 = new JSONObject();
 		data3.put("employee1", array1);
 		data3.put("employee2", array2);
+
+		System.out.println(data3.toString());
 
 	}
 }
