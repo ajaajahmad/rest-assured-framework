@@ -1,5 +1,6 @@
 package com.automation.tests;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class JsonArrayDemo {
@@ -18,6 +19,9 @@ public class JsonArrayDemo {
 		data2.put("lastname", "Khan");
 		data2.put("age", "54");
 		data2.put("salary", "742337");
+		
+		JSONArray array1 = new JSONArray();
+		array1.add(data1);
 
 	}
 }
