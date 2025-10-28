@@ -7,6 +7,7 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+
 # https://maven.apache.org/wrapper/#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
@@ -56,6 +57,7 @@ target/
 test-output/*
 test-output/
 reports/*
+
 # IntelliJ
 .idea/
 *.ipr
