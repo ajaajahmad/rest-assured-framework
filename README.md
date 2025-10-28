@@ -172,7 +172,7 @@ environment=DEV
 base.url=https://api.qa.example.com
 api.key=your_qa_api_key
 timeout=30
-environment=QA
+environment=qa
 ```
 
 ### Logging Configuration
